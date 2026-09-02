@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { Bot, Send, Sparkles, X } from 'lucide-react'
+import { Send, Sparkles, X } from 'lucide-react'
 
 const API_ENDPOINT = '/.netlify/functions/chat'
 
@@ -7,7 +7,7 @@ const initialMessages = [
   {
     role: 'assistant',
     content:
-      "Hi, I'm Billy's AI assistant! Ask me about his skills, services, projects, experience, or how to get in touch.",
+      "Hi, I'm SageMind! Ask me about Billy's skills, services, projects, experience, or how to get in touch.",
   },
 ]
 
@@ -55,7 +55,7 @@ function ChatWidget() {
 
       setMessages((prev) => [...prev, { role: 'assistant', content: data.reply }])
     } catch {
-      setError('Sorry, I could not reach the assistant right now. Please try again.')
+      setError('SageMind could not respond right now. The AI may not be configured or deployed yet.')
     } finally {
       setLoading(false)
       scrollToBottom()
@@ -67,7 +67,7 @@ function ChatWidget() {
       <button
         type="button"
         className="chat-launcher"
-        aria-label={open ? 'Close chat' : 'Open chat with Billy’s AI assistant'}
+        aria-label={open ? 'Close SageMind chat' : 'Open SageMind chat'}
         aria-expanded={open}
         onClick={() => setOpen((o) => !o)}
       >
@@ -75,13 +75,13 @@ function ChatWidget() {
       </button>
 
       {open && (
-        <section className="chat-widget" aria-label="Chat with Billy’s AI assistant">
+        <section className="chat-widget" aria-label="Chat with SageMind, Billy’s AI assistant">
           <header className="chat-header">
             <span className="chat-avatar" aria-hidden="true">
-              <Bot size={20} />
+              <Sparkles size={20} />
             </span>
             <div>
-              <strong>Billy’s Assistant</strong>
+              <strong>SageMind</strong>
               <span className="chat-status">AI · online</span>
             </div>
           </header>
@@ -110,7 +110,7 @@ function ChatWidget() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask about Billy’s work..."
+              placeholder="Ask SageMind about Billy’s work..."
               aria-label="Type your message"
               disabled={loading}
             />
