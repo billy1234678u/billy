@@ -16,6 +16,7 @@ import {
 } from 'lucide-react'
 import { ProfileImage } from './components/ProfileImage'
 import { SectionHeader } from './components/SectionHeader'
+import ChatWidget from './components/ChatWidget'
 import { siteData } from './data/siteData'
 import './App.css'
 
@@ -422,6 +423,8 @@ function App() {
           <a href="#home">Back to top</a>
         </div>
       </footer>
+
+      <ChatWidget />
     </div>
   )
 }

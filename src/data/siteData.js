@@ -15,7 +15,7 @@ export const siteData = {
     { label: 'Contact', href: '#contact' },
   ],
   socialLinks: [
-    { label: 'GitHub', href: 'https://github.com/billy12345678u', icon: 'github' },
+    { label: 'GitHub', href: 'https://github.com/billy1234678u', icon: 'github' },
     { label: 'LinkedIn', href: 'https://linkedin.com/in/bildadrono', icon: 'linkedin' },
     { label: 'Email', href: 'mailto:bildadrono671@gmail.com', icon: 'mail' },
   ],
@@ -166,7 +166,7 @@ export const siteData = {
   ],
   contactDetails: {
     email: 'bildadrono671@gmail.com / +254110417283',
-    github: 'https://github.com/billy12345678u',
+    github: 'https://github.com/billy1234678u',
     linkedin: 'https://linkedin.com/in/bildadrono',
   },
 };
