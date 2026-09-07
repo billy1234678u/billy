@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Send, Sparkles, X } from 'lucide-react'
 
 const API_ENDPOINT = '/.netlify/functions/chat'
@@ -17,7 +17,32 @@ function ChatWidget() {
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [available, setAvailable] = useState(null)
   const listRef = useRef(null)
+
+  useEffect(() => {
+    let cancelled = false
+
+    const probe = async () => {
+      try {
+        const response = await fetch(API_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ messages: [] }),
+        })
+        if (!cancelled) setAvailable(response.status !== 404)
+      } catch {
+        if (!cancelled) setAvailable(false)
+      }
+    }
+
+    probe()
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  if (available === null || available === false) return null
 
   const scrollToBottom = () => {
     setTimeout(() => {
