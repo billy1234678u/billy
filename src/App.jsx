@@ -40,6 +40,7 @@ function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [formSubmitted, setFormSubmitted] = useState(false)
+  const [formFallback, setFormFallback] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   useEffect(() => {
@@ -51,6 +52,7 @@ function App() {
   const handleFormSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setFormFallback(false)
 
     const formData = new FormData(e.target)
     const data = {
@@ -58,6 +60,8 @@ function App() {
       email: formData.get('email'),
       message: formData.get('message'),
     }
+
+    let submitted = false
 
     try {
       // Try to submit to Netlify if deployed there
@@ -74,16 +78,17 @@ function App() {
         setFormSubmitted(true)
         e.target.reset()
         setTimeout(() => setFormSubmitted(false), 5000)
+        submitted = true
       }
     } catch (error) {
-      // In development, just show success message
-      console.log('Form submission (development mode):', data)
-      setFormSubmitted(true)
-      e.target.reset()
-      setTimeout(() => setFormSubmitted(false), 5000)
-    } finally {
-      setIsSubmitting(false)
+      console.log('Form network error:', error)
     }
+
+    if (!submitted) {
+      setFormFallback(true)
+      e.target.reset()
+    }
+    setIsSubmitting(false)
   }
 
   const filteredProjects =
@@ -392,6 +397,13 @@ function App() {
               {formSubmitted && (
                 <div className="success-message">
                   <strong>Thank you!</strong> Your message has been sent successfully. I'll get back to you soon.
+                </div>
+              )}
+              {formFallback && (
+                <div className="success-message">
+                  <strong>Let's talk!</strong> This form only works on the Netlify deploy — email me directly:
+                  <br />
+                  <a href="mailto:bildadrono671@gmail.com">bildadrono671@gmail.com</a>
                 </div>
               )}
               <div className="field-group">
