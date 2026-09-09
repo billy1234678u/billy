@@ -30,10 +30,12 @@ Stats: 12+ projects completed, 8 technologies, 6 services, 24/7 continuous learn
 Experience: Independent Developer & Designer (current); portfolio and product work; hands-on web and design workflows (industrial attachment); building with modern standards; self-directed learning and creative growth (foundation/education).
 
 Certifications:
-- Introduction to IoT and Digital Transformation (Cisco, June 17 2026). Credential: https://www.credly.com/badges/7217b6fc-86ba-479b-89b1-2c9836702a6a/public_url
+- Introduction to IoT and Digital Transformation (Cisco, June 17, 2026). Credential: https://www.credly.com/badges/7217b6fc-86ba-479b-89b1-2c9836702a6a/public_url
+- Introduction to Cybersecurity (Cisco, September 9, 2026). Credential: https://www.credly.com/badges/ca931130-1cea-40e2-baa6-542d9d2946aa
 
 Contact:
-- Email: bildadrono671@gmail.com / +254110417283
+- Email: bildadrono671@gmail.com
+- Phone: +254110417283
 - GitHub: https://github.com/billy1234678u
 - LinkedIn: https://linkedin.com/in/bildadrono`
 

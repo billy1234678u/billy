@@ -28,6 +28,7 @@ const iconMap = {
   Palette,
   Gauge,
   Award,
+  Figma: PenTool,
   github: GitBranch,
   linkedin: Globe,
   mail: Mail,
@@ -374,6 +375,9 @@ function App() {
                 <a href={`mailto:${siteData.contactDetails.email}`}>
                   <Mail size={18} />
                   <span>{siteData.contactDetails.email}</span>
+                </a>
+                <a href={`tel:${siteData.contactDetails.phone}`}>
+                  <span>{siteData.contactDetails.phone}</span>
                 </a>
                 <a href={siteData.contactDetails.github} target="_blank" rel="noreferrer">
                   <GitBranch size={18} />
