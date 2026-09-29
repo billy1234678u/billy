@@ -9,6 +9,7 @@ import {
   LayoutTemplate,
   Mail,
   Menu,
+  MessageCircle,
   MonitorSmartphone,
   Palette,
   PenTool,
@@ -376,8 +377,14 @@ function App() {
                   <Mail size={18} />
                   <span>{siteData.contactDetails.email}</span>
                 </a>
-                <a href={`tel:${siteData.contactDetails.phone}`}>
-                  <span>{siteData.contactDetails.phone}</span>
+                <a
+                  className="button secondary-button"
+                  href={`https://wa.me/${siteData.contactDetails.phone.replace(/\D/g, '')}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <MessageCircle size={18} />
+                  <span>WhatsApp Business</span>
                 </a>
                 <a href={siteData.contactDetails.github} target="_blank" rel="noreferrer">
                   <GitBranch size={18} />
